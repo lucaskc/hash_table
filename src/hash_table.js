@@ -49,9 +49,23 @@ class HashTable {
     }
     return undefined
   }
-}
 
+  delete(key) {
+    const index = this._hash(key)
+    const bucket = this.data[index]
+    if(bucket) {
+      for(let i = 0; i < bucket.length; i++) {
+        if(bucket[i][0] === key) {
+          return bucket.splice(i,1)
+        }
+      }
+    }
+    return undefined
+  }
+}
+  
 const myHashTable = new HashTable(2);
 myHashTable.set('grapes', 10000)
 myHashTable.set('lucas', 10)
+myHashTable.delete('lucas')
 console.log(myHashTable.list("values"))
