@@ -4,6 +4,7 @@
   "description": "My implementation of a Hash Table",
   "main": "hash_table.js",
   "scripts": {
+    "start": "node hash_table.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
